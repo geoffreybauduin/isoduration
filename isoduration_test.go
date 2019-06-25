@@ -45,6 +45,10 @@ func TestString(t *testing.T) {
 	d = isoduration.Duration{Years: 1, Days: 2}
 	assert.Equal(t, d.String(), "P1Y2D")
 
+	// test with months
+	d = isoduration.Duration{Months: 3}
+	assert.Equal(t, d.String(), "P3M")
+
 	// test only smaller-than-day
 	d = isoduration.Duration{Hours: 1, Minutes: 2, Seconds: 3}
 	assert.Equal(t, d.String(), "PT1H2M3S")
